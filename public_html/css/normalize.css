@@ -1,0 +1,67 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    }
+
+    html {
+        --scroll-behavior: smooth;
+        scroll-behavior: smooth;
+    }
+
+    body {
+        font-family: 'Montserrat-Light';
+        background-color: #0E0E0E;
+        }
+
+    @font-face {
+        font-family: 'Montserrat-Medium';
+        src: url('../font/Montserrat-Medium.ttf');
+    }
+
+    @font-face {
+        font-family: 'Montserrat-Regular';
+        src: url('../font/Montserrat-Regular.ttf');
+    }
+
+    @font-face {
+        font-family: 'Montserrat-Bold';
+        src: url('../font/Montserrat-Bold.ttf');
+    }
+
+    @font-face {
+        font-family: 'Montserrat-ExtraBold';
+        src: url('../font/Montserrat-ExtraBold.ttf');
+    }
+
+    @font-face {
+        font-family: 'Montserrat-Thin';
+        src: url('../font/Montserrat-Thin.ttf');
+    }
+
+    @font-face {
+        font-family: 'Montserrat-Light';
+        src: url('../font/Montserrat-Light.ttf');
+    }
+    
+    * {
+        scrollbar-width: none; 
+        -ms-overflow-style: none;  
+    }
+    
+    
+    *::-webkit-scrollbar {
+        display: none; 
+    }
+    
+    
+    .scrollable {
+        overflow: auto;
+        scrollbar-width: none; 
+        -ms-overflow-style: none;  
+    }
+    
+    .scrollable::-webkit-scrollbar {
+        display: none;  
+    }
+    
