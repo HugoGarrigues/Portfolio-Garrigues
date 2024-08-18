@@ -66,7 +66,7 @@ $conn->close();
                     <img src="/assets/vector/view.svg" alt="">
                     <?php echo ($post['vue']) ?>
                 </div>
-                <a href="index.php?page=post&id=<?php ² ?>"><div id="next-display">
+                <a href="index.php?page=post&id=<?php  ?>"><div id="next-display">
                     NEXT
                 </div></a>
                 
