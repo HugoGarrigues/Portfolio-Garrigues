@@ -37,35 +37,52 @@ function getLastPostId($conn) {
     }
 }
 
-function getAllPostByDate() {
-    $sql = "SELECT titre, texte, sommaire, likes, vue, date_publication, auteur, categorie, temps_lecture FROM post ORDER BY date_publication DESC";
-    $result = $conn->query($sql);
+function getAllPostByDate($conn) {
+    $sql = "SELECT id, titre, texte, sommaire, likes, vue, date_publication, auteur, categorie, temps_lecture FROM post ORDER BY date_publication ASC";
+    
+    $stmt = $conn->prepare($sql);
+    
+    if (!$stmt->execute()) {
+        die("Erreur de requête SQL : " . $stmt->error);
+    }
+    
+    $result = $stmt->get_result();
 
-    if (!$result) {
-        die("Erreur de requête SQL : " . $conn->error);
+    if ($result->num_rows === 0) {
+        return [];
     }
 
     $posts = [];
     while ($row = $result->fetch_assoc()) {
         $posts[] = $row;
     }
+
     return $posts;
 }
 
 
-// function getPostByLikes() {
-//     $sql = "SELECT titre, texte, sommaire, likes, vue, date_publication, auteur, categorie, temps_lecture FROM post ORDER BY likes DESC";
-//     $result = $conn->query($sql);
+function getAllPostByLikes($conn) {
+    $sql = "SELECT id, titre, texte, sommaire, likes, vue, date_publication, auteur, categorie, temps_lecture 
+            FROM post 
+            ORDER BY likes DESC";
 
-//     if (!$result) {
-//         die("Erreur de requête SQL : " . $conn->error);
-//     }
+    $stmt = $conn->prepare($sql);
+    
+    if (!$stmt->execute()) {
+        die("Erreur de requête SQL : " . $stmt->error);
+    }
+    
+    $result = $stmt->get_result();
 
-//     $projects = [];
-//     while ($row = $result->fetch_assoc()) {
-//         $posts[] = $row;
-//     }
-//     return $posts;
-// }
+    if ($result->num_rows === 0) {
+        return [];
+    }
 
+    $posts = [];
+    while ($row = $result->fetch_assoc()) {
+        $posts[] = $row;
+    }
+
+    return $posts;
+}
 ?>

@@ -3,8 +3,8 @@
 include 'includes/db_connect.php';
 include 'includes/post_function.php';
 
-$next_id = $_GET['id'] + 1;
 $post = getPostById($conn, $_GET['id']);
+$id = $_GET['id'];
 
 $conn->close();
 ?>
@@ -62,11 +62,10 @@ $conn->close();
                     <img src="/assets/vector/heart.svg" alt="">
                     <?php echo ($post['likes']) ?>
                 </div>
-                <div id="view-display">
-                    <img src="/assets/vector/view.svg" alt="">
-                    <?php echo ($post['vue']) ?>
-                </div>
-                <a href="index.php?page=post&id=<?php  ?>"><div id="next-display">
+                <a href="index.php?page=post&id=<?php echo($id - 1) ?>"><div id="next-display">
+                    BACK
+                </div></a>
+                <a href="index.php?page=post&id=<?php echo($id + 1) ?>"><div id="next-display">
                     NEXT
                 </div></a>
                 

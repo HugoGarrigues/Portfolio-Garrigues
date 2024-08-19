@@ -5,7 +5,8 @@ include 'includes/post_function.php';
 
 $last_post_id = getLastPostId($conn);
 $post = getPostById($conn, $last_post_id);
-
+$postbydate = getAllPostByDate($conn);
+$postbylikes = getAllPostByLikes($conn);
 
 $conn->close();
 ?>
@@ -57,39 +58,65 @@ $conn->close();
 
 <section id="section-2">
 
-<?php foreach ($post as $posts): ?>
+<?php foreach ($postbydate as $i => $post): ?>
+    <?php if ($i >= 3) break; ?>
+    <div id="card-template">
+        <div id="card-img">
+            <img src="/assets/articles/<?php echo ($post['id'] + 1); ?>.png" alt="">
+        </div>
+        <div id="card-info">
+            <h1><?php echo ($post['titre']); ?></h1>
+        </div>
+        <div id="card-tools">
+            <div id="card-left-part">
+                <div id="like-display">
+                    <img src="/assets/vector/heart.svg" alt="">
+                    <?php echo ($post['likes']); ?>
+                </div>
+                <div id="view-display">
+                    <img src="/assets/vector/view.svg" alt="">
+                    <?php echo ($post['vue']); ?>
+                </div>
+            </div>
+            <div id="card-right-part">
+                <a href="index.php?page=post&id=<?php echo ($post['id']); ?>">Lire la suite</a>
+            </div>
+        </div>
+    </div>
+<?php endforeach; ?>
+
+    
+        
+</section>
+
+<section id="section-2">
+
+<?php foreach ($postbylikes as $i => $post): ?>
+    <?php if ($i >= 3) break; ?>
     <div id="card-template">
         <div id="card-img">
             <img src="/assets/articles/<?php echo ($post['id']); ?>.png" alt="">
         </div>
         <div id="card-info">
             <h1><?php echo ($post['titre']); ?></h1>
-            <p><?php echo ($post['sommaire']); ?></p>
         </div>
-            <div id="card-tools">
-                <div id="card-left-part">
-                    <div id="like-display">
-                        <img src="/assets/vector/heart.svg" alt="">
-                        <?php echo ($post['likes']); ?>
-                    </div>
-                    <div id="view-display">
-                        <img src="/assets/vector/view.svg" alt="">
-                        <?php echo ($post['vue']); ?>
-                    </div>
+        <div id="card-tools">
+            <div id="card-left-part">
+                <div id="like-display">
+                    <img src="/assets/vector/heart.svg" alt="">
+                    <?php echo ($post['likes']); ?>
                 </div>
-                <div id="card-right-part">
-                    <a href="index.php?page=post&id=<?php echo ($post['id']); ?>">Lire la suite</a>
+                <div id="view-display">
+                    <img src="/assets/vector/view.svg" alt="">
+                    <?php echo ($post['vue']); ?>
                 </div>
             </div>
+            <div id="card-right-part">
+                <a href="index.php?page=post&id=<?php echo ($post['id']); ?>">Lire la suite</a>
+            </div>
         </div>
+    </div>
 <?php endforeach; ?>
-    
-        
-</section>
-
-<section id="section-3">
-
-
 
 
 </section>

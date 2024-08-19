@@ -40,7 +40,7 @@ $conn->close();
 <section id="section-2">
     <div id="section-2-div-1">
         <h1>A Propos</h1>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque mauris metus, molestie at egestas a, porta a sem. Etiam eget est ex. Integer ut tortor ipsum. Mauris dolor ex, venenatis nec faucibus ut, tincidunt sit amet lorem. Proin blandit efficitur consequat. Nunc et elit lacus. Sed purus nibh, lacinia nec elementum sit amet, luctus vitae ligul.  Sed purus nibh, lacinia nec elementum sit amet, luctus vitae ligul Sed purus nibh, lacinia nec elementum sit amet, luctus vitae ligul Sed purus nibh, lacinia nec elementum sit amet, luctus </p>
+        <p>Bonjour, je m’appelle Hugo Garrigues, je suis actuellement étudiant en deuxième année dans la filière informatique à Aix Ynov Campus situé à Aix-En-Provence. Je suis passioné par le développement web et aspire a termes a devenir développeur fullstack. D’aussi loin que je me souvienne j’ai toujours été fasciné par l’univers de l’informatique ainsi que des nouvelles technologies. Dès mon plus jeune âge j’aimais être en contact avec tout ce qui avait un rapport de loin ou de prés au monde de l’informatique. Très jeune je passais déjà des heures sur l’ordinateur de la maison à explorer toutes les fonctionnalités possibles, et je peux vous dire que cela à été le point de départ de cette passion.</p>
         <h1>Expérience avec</h1>
         
         <div class="slider">
